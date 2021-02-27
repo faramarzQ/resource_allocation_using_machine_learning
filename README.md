@@ -24,7 +24,7 @@ the command outputs the data.csv file
 
 #### 3.1 Description
 The Cloud Module is Responsible for Storing Raw data, Preprocessing the Data, Managing the Warehouses, Learn based on the Data
-and Create ML model based on it and finally Sending Model To Edges.
+and Create ML model based on it and finally Sending Model To Edges. We can Consider it as the Brain of our system.
 
 #### 3.2 Process
 Data is stored in it's storage system and in here, we do the whole learning process in the cloud.py module (in Cloud/Storage/cloud.py, Not a Python Class). the code is fully commented in Docstring format so there is no need for details description but an overview. the Module reads the Data, splits it on 70 percent for training and 30 percent testing, Trains it's model using Decision Tree Classifier Technique, Tests it's model and persists it's model in the storage system.
@@ -139,6 +139,8 @@ values af each tasks are Generated randomly.
 Cloudlet is a Class Generated in edges so i placed it in Edges/Cloudlet.py. creating object of the Class initializes it's attributes. Code is fully commented.
 
 ## 5. ***Worker***
+
+#### 5.1 Description
 Worker is our Resources, machines which does the jobs. all workers are Inheriting the Mother Worker Class (Edges/workers/worker.py file) which has all the functionalities and attributes. each worker can override these properties by their own.
 my application has 3 workers. each worker has some attributes:
 
@@ -157,5 +159,14 @@ my application has 3 workers. each worker has some attributes:
   </li>
 </ul>
 
-#### 4.3 process
+#### 5.2 process
 Worker is a class, so creating a class with optional name and inheriting the Worker Class would create a worker server.
+
+## 6. ***Master***
+
+#### 6.1 Description
+If we name the Cloud module as the Brain of our system, Master Node of the system is it's heart. It's responsible for getting information of each Cloudlet and finding the best Worker for it using the trained model in the cloud storage. for instance web have a task, the metadata of the task is being sent to the Master Node, it choses best Worker by considering all attributes of Cloudlet and Workers, then Attaching The Cloudlet To The Worker. Worker then gets the Cloudlet through the Network and does the job.
+In this application i've implemented a ***greedy approach*** to compare the functionality and performance of the ML model with it. the Greedy algorithm considers Size and Instructions of the Task not it's priority.
+
+#### 6.2 execution
+Master Class declares itself and does the job. following command: `python3 Edges/Master.py` would do it all and prints the outputs.

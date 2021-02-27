@@ -6,6 +6,9 @@ An application i've created based on the following paper:
 "A Machine Learning Framework for Resource Allocation Assisted by Cloud Computing" which is introducing a framework to do
 resource allocation using Machine learning techniques and assist cloud computing for doing the job. for more details refer to the Article. And be aware that this application is a small scale one, probably just a simulator of the real world application.
 
+The following picture depicts the geographic system over network
+<img style="display:block;" width="500px" src="figure1.png">
+
 ## 2. ***Data***
 #### 2.1 Description
 As the system uses Machine learning to allocate the proper resources, we need data. But finding a prepared and clean data

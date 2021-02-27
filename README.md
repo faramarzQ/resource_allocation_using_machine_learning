@@ -20,7 +20,7 @@ Attributes, classes and values are manipulatable but needs coding also.
 To execute the seeder and create the data, run `python3 Cloud/seeder.py`. change the '/' to '\\' in case you are using a non-unix based system.
 the command outputs the data.csv file
 
-## 3. Cloud Module
+## 3. ***Cloud Module***
 
 #### 3.1 Description
 The Cloud Module is Responsible for Storing Raw data, Preprocessing the Data, Managing the Warehouses, Learn based on the Data
@@ -33,7 +33,7 @@ The Classifier Technique is chosen using Cross validation Technique which showed
 #### 3.3 Execution
 The cloud module is executable using `python3 Cloud/cloud.py` command. it outputs a model with joblib format on our storage.
 
-## 4. Cloudlet
+## 4. ***Cloudlet***
 
 #### 4.1 Description
 Cloudlets are just Tasks, a name chosen by Cloudsim framework. Tasks are generated on different areas (in our application we have 3 different position).
@@ -67,7 +67,7 @@ values af each tasks are Generated randomly.
       values
     </th>
     <th>
-      1
+      area 1
     </th>
     <th>
       High (1 to 100)
@@ -84,7 +84,7 @@ values af each tasks are Generated randomly.
   </tr>
   <tr>
     <th>
-      2
+      area 2
     </th>
     <th>
       Low (101 to 300)
@@ -101,7 +101,7 @@ values af each tasks are Generated randomly.
   </tr>
   <tr>
     <th>
-      3
+      area 3
     </th>
     <th>
     </th>
@@ -137,3 +137,25 @@ values af each tasks are Generated randomly.
 
 #### 4.2 Process
 Cloudlet is a Class Generated in edges so i placed it in Edges/Cloudlet.py. creating object of the Class initializes it's attributes. Code is fully commented.
+
+## 5. ***Worker***
+Worker is our Resources, machines which does the jobs. all workers are Inheriting the Mother Worker Class (Edges/workers/worker.py file) which has all the functionalities and attributes. each worker can override these properties by their own.
+my application has 3 workers. each worker has some attributes:
+
+<ul>
+  <li>
+    Position: position of the worker server
+  </li>
+  <li>
+    Power: Power of the worker server in million instructions per seconds
+  </li>
+  <li>
+    Bandwidth: Bandwidth Between the worker server and other Workers in MB/s
+  </li>
+  <li>
+    Makespan (timer): the time the worker consumed to do the jobs in seconds
+  </li>
+</ul>
+
+#### 4.3 process
+Worker is a class, so creating a class with optional name and inheriting the Worker Class would create a worker server.

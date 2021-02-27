@@ -32,3 +32,108 @@ The Classifier Technique is chosen using Cross validation Technique which showed
 
 #### 3.3 Execution
 The cloud module is executable using `python3 Cloud/cloud.py` command. it outputs a model with joblib format on our storage.
+
+## 4. Cloudlet
+
+#### 4.1 Description
+Cloudlets are just Tasks, a name chosen by Cloudsim framework. Tasks are generated on different areas (in our application we have 3 different position).
+
+Attributes, values and classes are listed bellow. the raw Data Created are all in numbers categorizes or continues, but we preprocess them to categorized values, for example a task with 120 mi is considered as a task with high level instruction (more than 100). the thresholds are calculated using test and trial process.
+values af each tasks are Generated randomly.
+***What we need to do is to find best Worker for Each Task***
+<table>
+  <tr>
+    <th>
+      Attributes
+    </th>
+    <th>
+      Position
+    </th>
+    <th>
+      Instructions (million instructions)
+    </th>
+    <th>
+      Size (MB)
+    </th>
+    <th>
+      High Priority
+    </th>
+    <th>
+      Allocated Worker (Class)
+    </th>
+  </tr>
+  <tr>
+    <th rowspan=3>
+      values
+    </th>
+    <th>
+      1
+    </th>
+    <th>
+      High (1 to 100)
+    </th>
+    <th>
+      High (1 to 10)
+    </th>
+    <th>
+      True
+    </th>
+    <th>
+      Worker in Area 1
+    </th>
+  </tr>
+  <tr>
+    <th>
+      2
+    </th>
+    <th>
+      Low (101 to 300)
+    </th>
+    <th>
+      Low (11 to 30)
+    </th>
+    <th>
+      False
+    </th>
+    <th>
+      Worker in Area 2
+    </th>
+  </tr>
+  <tr>
+    <th>
+      3
+    </th>
+    <th>
+    </th>
+    <th>
+    </th>
+    <th>
+    </th>
+    <th>
+      Worker in area 3
+    </th>
+  </tr>
+  <tr>
+    <th>
+      Type
+    </th>
+    <th>
+      Categorized
+    </th>
+    <th>
+      Continues
+    </th>
+    <th>
+      Continues
+    </th>
+    <th>
+      Categorized
+    </th>
+    <th>
+      Categorized
+    </th>
+  </tr>
+</table>
+
+#### 4.2 Process
+Cloudlet is a Class Generated in edges so i placed it in Edges/Cloudlet.py. creating object of the Class initializes it's attributes. Code is fully commented.

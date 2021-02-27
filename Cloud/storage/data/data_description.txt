@@ -1,10 +1,8 @@
-position, instructions, size, high_priority
+position, instructions, size, high_priority, class (position)
 
-instruction: low = (1, 100)
-instruction: high = (101, 300)
+instruction: low = (1, 100), high = (101, 300)
 
-size: low = (1, 10)
-size: high = (11, 30)
+size: low = (1, 10), high = (11, 30)
 
 # 1, low,  low,  1 = 1
 # 1, low,  low,  0 = 1
@@ -32,3 +30,7 @@ size: high = (11, 30)
 # 3, high, low , 0 = 2
 # 3, high, high, 1 = 3
 # 3, high, high, 0 = 3
+
+for example for the first row:
+    a task in position one, with low number of instructionsand low size with high priority,
+    it's better to allocate Worker node in position 1 to it

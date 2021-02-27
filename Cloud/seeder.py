@@ -1,17 +1,20 @@
 import random
 
 if __name__ == '__main__':
-    """ the seeder file, which creates sample data using the given template
-        the template is in the seeder.py file,
+    """ the seeder module creates sample data using the given template
+        the template is in the seeder_data file,
         it specifies the attributes and values our data has
 
         output: data.csv
     """
 
-    with open("./data/seeder_data.csv", "r") as file_object:
+    # read template
+    with open("Cloud/storage/data/seeder_data_template.csv", "r") as file_object:
         seeder = file_object.read().split('\n')
 
-    with open("./data/data.csv", "a") as file_object:
+    with open("Cloud/storage/data/data.csv", "a") as file_object:
+        # for each row in template, create data in random numbers
+        # and write the row in a file
         for i in seeder:
             temp = i.split(',')
 
@@ -34,7 +37,8 @@ if __name__ == '__main__':
 
                 file_object.write('\n')
 
-    with open("./data/data.csv", "r") as file_object:
+    # read the whole data to manipulate
+    with open("Cloud/storage/data/data.csv", "r") as file_object:
         array = file_object.read().split('\n')
 
     random.shuffle(array)
@@ -44,5 +48,5 @@ if __name__ == '__main__':
         array2 += i
         array2 += '\n'
 
-    with open("./data/data.csv", "w") as file_object:
+    with open("Cloud/storage/data/data.csv", "w") as file_object:
         array = file_object.write(array2)

@@ -138,7 +138,7 @@ values af each tasks are Generated randomly.
 #### 4.2 Process
 Cloudlet is a Class Generated in edges so i placed it in Edges/Cloudlet.py. creating object of the Class initializes it's attributes. Code is fully commented.
 
-## 5. ***Worker***
+## 5. ***Worker Node***
 
 #### 5.1 Description
 Worker is our Resources, machines which does the jobs. all workers are Inheriting the Mother Worker Class (Edges/workers/worker.py file) which has all the functionalities and attributes. each worker can override these properties by their own.
@@ -162,7 +162,7 @@ my application has 3 workers. each worker has some attributes:
 #### 5.2 process
 Worker is a class, so creating a class with optional name and inheriting the Worker Class would create a worker server.
 
-## 6. ***Master***
+## 6. ***Master Node***
 
 #### 6.1 Description
 If we name the Cloud module as the Brain of our system, Master Node of the system is it's heart. It's responsible for getting information of each Cloudlet and finding the best Worker for it using the trained model in the cloud storage. for instance web have a task, the metadata of the task is being sent to the Master Node, it choses best Worker by considering all attributes of Cloudlet and Workers, then Attaching The Cloudlet To The Worker. Worker then gets the Cloudlet through the Network and does the job.
@@ -170,3 +170,39 @@ In this application i've implemented a ***greedy approach*** to compare the func
 
 #### 6.2 execution
 Master Class declares itself and does the job. following command: `python3 Edges/Master.py` would do it all and prints the outputs.
+
+## ***Conclusion***
+
+i chose values for attributes in Cloudlets and workers using Test and Trial. my purpose was that the Worker 3 have more power
+than Worker 2 and Worker 2 than 3. but the bandwidth between 1 and 3 is very low , between 1 and 2 is high and between 2 and 3 is the highest.
+Running the resource allocation process using the application had following results average on 40 time of execution:
+
+Using Machine learning Technique:
+<ul>
+    <li>
+      Worker 1 Makespan:  221.5 s
+    </li>
+    <li>
+      Worker 2 Makespan:  569 s
+    </li>
+    <li>
+      Worker 3 Makespan:  982.5 s
+    </li>
+</ul>
+
+Using Greedy Algorithm
+<ul>
+    <li>
+      Worker 1 Makespan:  322.2 s
+    </li>
+    <li>
+      Worker 2 Makespan:  248.4 s
+    </li>
+    <li>
+      Worker 3 Makespan:  1050.5 s
+    </li>
+</ul>
+
+Which shows the ML model does a better job spreading the tasks on workers and lowering the overall makespan.
+As you can see the Greedy algorithm Sends most of the Tasks To Worker 3. but ML balances the loads as we wanted it to be.
+although the Data was Generated but a human so the result has to be what we. In real world Application the process of training the mode is not once and can even be in intervals so that it can find the best way to allocate resources.

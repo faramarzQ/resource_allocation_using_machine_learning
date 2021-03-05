@@ -8,7 +8,7 @@ resource allocation using Machine learning techniques and assist cloud computing
 
 The following picture depicts the geographic system over network.
 
-<img style="display:block;margin-left: auto; margin-right: auto; width:50 %" width="500px" src="figure1.png">
+<img style="display:block;margin-left: auto; margin-right: auto; width:50 %" width="500px" src="figure 1.png">
 
 
 ## 2. ***Data***

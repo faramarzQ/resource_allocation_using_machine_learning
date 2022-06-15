@@ -1,5 +1,5 @@
 # Cloud_assisted_resource_allocation_using_machine_learning
-A Resource allocation application using Machine learning technique Assisted by Cloud Computing implemented in Python
+A Resource allocation application using machine learning technique assisted by cloud computing implemented in Python
 
 ## 1 ***Introduction***
 An application i've created based on the following paper:

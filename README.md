@@ -4,11 +4,15 @@ A resource allocation application using machine learning technique assisted by c
 ## 1. ***Introduction***
 An application i've created based on the following paper:
 "A Machine Learning Framework for Resource Allocation Assisted by Cloud Computing" which is introducing a framework to do
-resource allocation using Machine learning techniques and assist cloud computing for doing the job. for more details refer to the Article. And be aware that this application is a small scale one, probably just a simulator of the real world application.
+resource allocation using Machine Learning techniques and assist Cloud Computing for doing the job(for more details refer to the paper). Please note that this application is a small scale implementaion of the base paper.
 
-The following picture depicts the geographic system over network.
+The following imag depicts the geographic system over the network.
 
-<img style="display:block;margin-left: auto; margin-right: auto; width:50 %" width="500px" src="figure 1.png">
+<p align="center">
+  <img style="display:block;margin-left: auto; margin-right: auto; width:50 %" width="500px" src="figure 1.png">
+</p>
+
+Each section of the application documented below:    
 
 
 ## 2. ***Data***
